@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <title>Actividad 5</title>
+    <meta charset="UTF-8" />
+</head>
+
+<body>
+    <script>
+        // Parte 1
+        const empleado = {
+            nombre: 'Juan Luis',
+            sueldo: 1300,
+            cargo: 'Peón',
+            departamento: 'Obras'
+        }
+        empleado.nombre = 'Pedro';
+        empleado.localidad = 'Pamplona';
+        delete empleado.cargo;
+        console.log(empleado);
+
+        // Parte 2
+        const nombre = empleado.nombre;
+        const { localidad, departamento } = empleado;
+        console.log(nombre);
+        console.log(localidad);
+        console.log(departamento);
+
+        // Parte 3
+        const empleadoCopia = { ...empleado };
+        empleado.nombre = 'JL';
+        console.log(empleado);
+        console.log(empleadoCopia);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <title>Actividad 9</title>
+    <meta charset="UTF-8" />
+</head>
+
+<body>
+    <script>
+        // Parte 1
+        const numero = prompt('Introduce número');
+        if (numero < 0) {
+            alert('Número negativo');
+        } else {
+            alert('Número positivo');
+        }
+
+        const frase = prompt('Introduce frase');
+        const letra = prompt('Introduce letra');
+        if (frase.includes(letra)) {
+            alert(`${letra} se incluye en la frase introducida`);
+        } else {
+            alert(`${letra} no se incluye en la frase introducida`);
+        }
+
+        // Parte 2
+        const letra2 = prompt('Introduce letra');
+        switch (letra2.toLowerCase()) {
+            case 'a':
+            case 'e':
+            case 'i':
+            case 'o':
+            case 'u':
+                alert(`${letra2} es vocal`);
+                break;
+            default:
+                alert(`${letra2} no es vocal`);
+                break;
+        }
+
+        // Parte 3
+        const numero2 = prompt('Introduce numero');
+        if (numero2 > 9 && numero2 < 100) {
+            alert(`${numero2} tiene dos dígitos`);
+        } else {
+            alert(`${numero2} no tiene dos dígitos`);
+        }
+
+        // Parte 4
+        const numero3 = prompt('Introduce numero');
+        numero3 < 0 ? alert('Numero negativo') : alert('Número positivo');
+
+    </script>
+</body>
+
+</html>

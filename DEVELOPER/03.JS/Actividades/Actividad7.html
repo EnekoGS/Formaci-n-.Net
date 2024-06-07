@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <title>Actividad 7</title>
+    <meta charset="UTF-8" />
+</head>
+
+<body>
+    <script>
+        const vecinos = [];
+
+        const vecino1 = {
+            nombre: 'Felipe',
+            edad: 50
+        }
+        const vecino2 = {
+            nombre: 'Ana',
+            edad: 30
+        }
+        const vecino3 = {
+            nombre: 'Sergio',
+            edad: 60
+        }
+        const vecino4 = {
+            nombre: 'Félix',
+            edad: 70
+        }
+        const vecino5 = {
+            nombre: 'Fran',
+            edad: 25
+        }
+
+        // vecinos.push(vecino1);
+        // vecinos.push(vecino2);
+        // vecinos.push(vecino3);
+        // vecinos.push(vecino4);
+        // vecinos.push(vecino5);
+        vecinos.push(vecino1, vecino2, vecino3, vecino4, vecino5);
+
+        let vecinoEliminar = prompt('Introduce en qué piso vive el vecino que quieres eliminar');
+        vecinoEliminar--;
+        vecinos.splice(vecinoEliminar, 1);
+        console.table(vecinos);
+    </script>
+</body>
+
+</html>

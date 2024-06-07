@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <title>Actividad 4</title>
+    <meta charset="UTF-8" />
+</head>
+
+<body>
+    <script>
+        // Parte 1
+        const nombre = 'Juan Luis';
+        const apellido = 'Ochoa';
+        console.log('Tu nombre es ' + nombre + ' y te apellidas ' + apellido);
+        console.log(`Tu nombre es ${nombre} y te apellidas ${apellido}`);
+        const tieneLetraA = nombre.includes('a');
+        console.log(tieneLetraA);
+
+        // Parte 2
+        const localidad = '       Pamplona    ';
+        // const localidadSinEspacios = localidad.trimStart().trimEnd();
+        const localidadSinEspacios = localidad.trim();
+        // const primeraLetraLocalidad = localidadSinEspacios.substring(0,1);
+        const primeraLetraLocalidad = localidadSinEspacios.charAt(0);
+        console.log(localidadSinEspacios);
+        console.log(primeraLetraLocalidad);
+
+        // Parte 3
+        const email = 'jl@gmail.com';
+        const emailMayus = email.toUpperCase();
+        console.log(emailMayus);
+
+        const nombreYDominio = email.split('@');
+        console.log(nombreYDominio);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad 13</title>
+    <style>
+        .grande {
+            width: 400px;
+            height: 200px;
+        }
+
+        .negrita {
+            font-weight: bold;
+        }
+    </style>
+    
+</head>
+
+<body>
+    <h1 id="titulo">Mi ejercicio DOM</h1>
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor, elit a porta tincidunt, nunc magna
+        malesuada ex, non ultrices turpis arcu id risus. Nullam auctor, nunc at luctus semper, urna ligula tincidunt
+        augue, vitae bibendum turpis nunc sed nunc. Suspendisse potenti. Nullam auctor, nunc at luctus semper, urna
+        ligula tincidunt augue, vitae bibendum turpis nunc sed nunc. Suspendisse potenti
+    </p>
+    <img id = "imagen" src="https://picsum.photos/600/600" alt=" argaskiHandi">
+    
+    <h2>prueba 1</h2>
+    <ol>
+        <li>Elemento 1</li>
+        <li>Elemento 2</li>
+        <li>Elemento 3</li>
+        <li>Elemento 4</li>
+        <li>Elemento 5</li>
+    </ol>
+    <script>
+
+        // PARTE 1
+        
+        // Crear un contenido HTML de un tema libre con las siguientes características:
+        // • Comenzaremos la página con un h1, después escribiremos un párrafo, después una imagen, después una
+        // cabecera secundaria con un h2, y luego una lista numerada.
+        // • Crear un script integrado en el body del documento con la siguiente especificación:
+        //  o Capturar el h1 y cambiarle el título.
+        //  o Capturar el h2 y cambiarle el título.
+        //  o Capturar la imagen y cambiarla.
+
+        const titulo = document.getElementById('titulo');
+        titulo.textContent = 'Ejercicio DOM 13 Bea';
+
+        const h2 = document.querySelector('h2');
+        h2.textContent = 'EUREKA!!!';
+
+        // const imagen = document.getElementById('imagen');
+        // imagen.src = 'https://picsum.photos/400/400';
+        // imagen.alt = 'photo'; 
+        
+
+        // PARTE 2
+
+        // • Crear un estilo CSS de clase “negrita”. Este estilo aplicará el efecto negrita.
+        // • Crear un estilo CSS de clase “grande”. Este estilo tendrá propiedades para aplicar un alto de 200px y un ancho de 400px.
+        
+         // la clase negrita la hemos definido en la sección head. Si deseas añadir múltiples classes debes agregar una coma después de cada una
+        
+        // • Continuar con el script de la parte 1 haciendo lo siguiente:
+        //      o Capturar la lista y aplicarle el estilo negrita mediante el selector de clase.
+        //      o Aplicar la clase “grande” a la imagen.
+
+        const lista = document.querySelector('ol');
+        lista.classList.add('negrita');
+
+        // imagen.classList.add('grande');
+
+        // PARTE 3
+        // • Crear un enlace al final de la página que navegue a un sitio determinado.
+        // • Eliminar el último elemento li de la lista.
+        const enlace = document.createElement('a');
+        enlace.href = 'https://www.google.com';
+        enlace.textContent = 'Ir a Google';
+        document.body.appendChild(enlace);
+
+        const ultimoElemento = lista.lastElementChild;
+        ultimoElemento.remove();       
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <title>Actividad 8</title>
+    <meta charset="UTF-8" />
+</head>
+
+<body>
+    <h1>Nuevo Producto</h1>
+    <form>
+        <label for="nombre">Nombre de producto:</label>
+        <input type="text" id="nombre" name="producto_nombre" required placeholder="Nombre (obligatorio)">
+        <br />
+        <label for="precio">Precio:</label>
+        <input type="number" id="precio" name="producto_precio">
+        <br />
+        <label for="categoria">Categoría:</label>
+        <select name="producto_categoria" id="categoria">
+            <option value="tecnologia">Tecnología</option>
+            <option value="textil">Textil</option>
+        </select>
+        <br />
+        <input type="checkbox" id="descatalogado" value="producto_descatalogado"> <label
+            for="descatalogado">Descatalogado</label>
+        <br />
+        <button type="submit">Agregar producto</button>
+    </form>
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <title>Actividad 10</title>
+    <meta charset="UTF-8" />
+</head>
+
+<body>
+    <script>
+        let resultado;
+        let operacion = prompt('Introduce operación a realizar (s, r, p, d)');
+        operacion = operacion.toLowerCase();
+        if (operacion !== 's' && operacion !== 'm' && operacion !== 'p' && operacion !== 'd')
+            alert('Operación errónea');
+        else {
+            const n1 = prompt('Introduce primer número');
+            const n2 = prompt('Introduce segundo número');
+            n1 = parseInt(n1);
+            n2 = parseInt(n2);
+            switch (operacion) {
+                case 's':
+                    resultado = n1 + n2;
+                    alert(`${n1} + ${n2} = ${resultado}`);
+                    break;
+                case 'r':
+                    resultado = n1 - n2;
+                    alert(`${n1} - ${n2} = ${resultado}`);
+                    break;
+                case 'p':
+                    resultado = n1 * n2;
+                    alert(`${n1} * ${n2} = ${resultado}`);
+                    break;
+                case 'd':
+                    resultado = n1 / n2;
+                    alert(`${n1} / ${n2} = ${resultado}`);
+                    break;
+            }
+        }
+    </script>
+</body>
+
+</html>

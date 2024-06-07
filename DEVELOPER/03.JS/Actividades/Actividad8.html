@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <title>Actividad 8</title>
+    <meta charset="UTF-8" />
+</head>
+
+<body>
+    <script>
+        // Parte 1
+        function sumar(sumando1, sumando2) {
+            alert(sumando1 + sumando2);
+        }
+
+        const sumar = function (sumando1, sumando2) {
+            alert(sumando1 + sumando2);
+        }
+
+        const numero1 = prompt('Introduce primer número');
+        const numero2 = prompt('Introduce segundo número');
+
+        sumar(parseInt(numero1), parseInt(numero2));
+
+        // Parte 2
+        function producto(factor1, factor2) {
+            return factor1 * factor2;
+        }
+
+        const numero3 = prompt('Introduce tercer número');
+        const numero4 = prompt('Introduce cuarto número');
+
+        const resultado = producto(numero3, numero4);
+
+        console.log(resultado);
+    </script>
+</body>
+
+</html>
