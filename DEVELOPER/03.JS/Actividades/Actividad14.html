@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Actividad04</title>
+   
+</head>
+
+<body>
+    <h1>Registrate</h1>
+
+    <form>
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre" class="nombre">
+        <button type="button" id="registrarme">Registrarme</button>
+        <span id="mensaje"></span>
+    </form>
+
+    <script>
+        const nombreInput = document.getElementById('nombre');
+        const mensajeSpan = document.getElementById('mensaje');
+        const registrarmeButton = document.getElementById('registrarme');
+
+        nombreInput.addEventListener('focus', () => {
+            mensajeSpan.textContent = 'Introduce tu nombre';
+        });
+
+        registrarmeButton.addEventListener('click', () => {
+            mensajeSpan.textContent = '';
+        });
+    </script>
+    
+    <!-- <script src="../js/actividad14.js"></script> -->
+</body>
+</html>
+
+</html>
