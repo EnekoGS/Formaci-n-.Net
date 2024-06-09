@@ -24,12 +24,22 @@
         else {
             alert('Introduzca los valores');
             switch (figurasGeometricas) {
-            case 1:
-                let radio = prompt('Introduzca el valor del radio')
-                resultado = Math.PI * Math*(radio * radio)
+            case '1':
+                const radio = Number(prompt('Introduzca el valor del radio.'));
+                resultado = Math.PI*(radio * radio);
+                alert(`El resultado del área del círculo es: ${resultado}`);
                 break;
-            case 2:
-                
+            case '2':
+                const lado = Number(prompt('introduzca el valor del lado.'));
+                resultado = lado*lado;
+                alert(`El resultado del área del cuadrado es: ${resultado}`);
+                break;
+            case '3':
+                const base = Number(prompt('introduzca el valor de la base'));
+                const altura = Number(prompt('introduzca el valor de la altura'));
+                resultado = (base * altura) / 2;
+                alert(`El resultado del área del triangulo es: ${resultado}`);
+                break; 
            }
         }
 
