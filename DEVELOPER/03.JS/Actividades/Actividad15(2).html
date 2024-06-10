@@ -55,17 +55,18 @@
                 <div class="form-group">
                     <label for="name" class="sr-only my-2">Nombre</label>
                     <input type="text" class="form-control" placeholder="Inroduzca su nombre" name="name" id="name">
-                    <small id="nameHelp" aria-live="polite" class="form-text text-danger" hidden>Introduzca un nombre válido</small>
+                    <small id="nameHelp" aria-live="polite" class="form-text text-danger" hidden>Por favor, introduzca su nombre.</small>
                 </div>
                 <div class="form-group">
                     <label for="age" class="sr-only my-2">Edad</label>
                     <input type="number" class="form-control" placeholder="Introduzca su edad" name="age" id="age">
-                    <small id="ageHelp" class="form-text text-danger" hidden>Introduzca una edad válida</small>
+                    <small id="ageHelp" class="form-text text-danger" hidden>Por favor, introduzca su edad.</small>
+                    <small id="ageRange" class="form-text text-danger" hidden>La edad tiene que ser entre 6 y 80 años.</small>
                 </div>
                 <div class="form-group">
                     <label for="DNI" class="sr-only my-2">DNI</label>
                     <input type="text" class="form-control" placeholder="Introduzca su DNI" name="dni" id="dni">
-                    <small id="dniHelp" class="form-text text-danger" hidden>DNI obligatorio</small>
+                    <small id="dniHelp" class="form-text text-danger" hidden>Por favor, introduzca su DNI.</small>
                 </div>
                 <div class="form-group mt-4">
                     <button class="btn btn-lg btn-primary btn-block" id="submit" type="submit" disabled>
@@ -87,10 +88,113 @@
         const inputDni = document.querySelector('#dni');
         const btnSubmit = document.querySelector('#submit');
         const nameHelp = document.querySelector('#nameHelp');
-        const passwordHelp = document.querySelector('#passwordHelp');
+        const ageHelp = document.querySelector('#ageHelp');
         const dniHelp = document.querySelector('#dniHelp');
+        const ageRange = document.querySelector('#ageRange');
+        const formulario = document.querySelector('.form-signin');
 
-        
+
+        // Validamos el Nombre:
+
+        const validarNombre = (e) => {
+
+            const vacio = estaVacio(e.target.value);
+            const nameOK = esNombre(e.target.value);
+
+            if (vacio || !nameOK) {
+                nameHelp.hidden = false; // Mensaje de error
+                nameHelp.textContent = 'Por favor, introduzca su nombre.';
+                nameValido = false;
+            } else {
+                nameHelp.hidden = true; // No se mostrará el mensaje porque el valor que hemos introducido es correcto.
+                nameHelp.textContent = '';
+                nameValido = true;
+            }
+            validarEnviar();
+        }
+
+        const esNombre = (texto) => {
+            const regex =  /^[a-zA-Z\s]+$/;
+            return regex.test(texto);
+        }
+
+        const validarEdad = (e) => {
+            const vacio = estaVacio(e.target.value);
+            const ageOK = esEdad(e.target.value);
+
+            if (vacio || !ageOK) {
+                ageHelp.hidden = false; // Mensaje de error
+                ageHelp.textContent = 'Por favor, introduzca su edad.';
+                ageValido = false;
+            } else {
+                ageHelp.hidden = true;
+                ageHelp.textContent = '';
+                ageValido = true;
+            }
+            validarEnviar();
+        }
+
+        const estaVacio = (texto) => {
+            return texto.trim() === ''; // Hace un return si está vacio (true) o no (false):
+        } 
+
+        // Comprueba si la edad que introducimos es un valor entre 6 y 80.
+        const esEdad = (number) => {
+            /* texto = parsInt(texto); */
+            if ( number >= 6 && number <= 80) {
+                ageRange.hidden = true;
+                ageRange.textContent = '';
+                ageValido = true;
+            } else {
+                ageRange.hidden = false; 
+                ageRange.textContent = 'La edad tiene que ser entre 6 y 80 años.';
+                ageValido = false;
+            }
+        }
+
+        const validarDni = (e) => {
+            const vacio = estaVacio(e.target.value);
+            const dniOK = esDni(e.target.value);
+
+            if (vacio || !dniOK) {
+                dniHelp.hidden = false; // Mensaje de error
+                dniHelp.textContent = 'Por favor, introduzca su DNI.'
+                dniValido = false;
+            } else {
+                dniHelp.hidden = true;
+                dniHelp.textContent = '';
+                dniValido = true;
+            }
+            validarEnviar();
+        }
+
+        const esDni = (texto) => {
+            const regex = /^\d{8}[a-zA-Z]$/;
+            const resultado = regex.test(texto);
+            return resultado;
+        }
+
+        const validarEnviar = () => {
+            if (nameValido && ageValido && dniValido) {
+                btnSubmit.disabled = false;
+            } else {
+                btnSubmit.disabled = true;
+            }
+        }
+
+        const submit = (e) => {
+            e.preventDefault();
+            const alertaExito = document.createElement('small');
+            alertaExito.classList.add('form-text', 'text-success');
+            alertaExito.textContent = 'Datos enviados';
+            formulario.appendChild(alertaExito);
+        }
+
+        // Asignar eventos
+        inputName.addEventListener('input', validarNombre);
+        inputAge.addEventListener('input', validarEdad);
+        inputName.addEventListener('input', validarDni);
+        formulario.addEventListener('submit', submit);
     </script>
 
 </body>
