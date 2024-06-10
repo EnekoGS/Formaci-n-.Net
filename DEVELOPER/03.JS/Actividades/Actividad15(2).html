@@ -113,11 +113,6 @@
             validarEnviar();
         }
 
-        const esNombre = (texto) => {
-            const regex =  /^[a-zA-Z\s]+$/;
-            return regex.test(texto);
-        }
-
         const validarEdad = (e) => {
             const vacio = estaVacio(e.target.value);
             const ageOK = esEdad(e.target.value);
@@ -134,24 +129,6 @@
             validarEnviar();
         }
 
-        const estaVacio = (texto) => {
-            return texto.trim() === ''; // Hace un return si está vacio (true) o no (false):
-        } 
-
-        // Comprueba si la edad que introducimos es un valor entre 6 y 80.
-        const esEdad = (number) => {
-            /* texto = parsInt(texto); */
-            if ( number >= 6 && number <= 80) {
-                ageRange.hidden = true;
-                ageRange.textContent = '';
-                ageValido = true;
-            } else {
-                ageRange.hidden = false; 
-                ageRange.textContent = 'La edad tiene que ser entre 6 y 80 años.';
-                ageValido = false;
-            }
-        }
-
         const validarDni = (e) => {
             const vacio = estaVacio(e.target.value);
             const dniOK = esDni(e.target.value);
@@ -164,6 +141,30 @@
                 dniHelp.hidden = true;
                 dniHelp.textContent = '';
                 dniValido = true;
+            }
+            validarEnviar();
+        }
+
+        const estaVacio = (texto) => {
+            return texto.trim() === ''; // Hace un return si está vacio (true) o no (false):  
+        }
+
+        const esNombre = (texto) => {
+            const regex =  /^[a-zA-Z\s]+$/;
+            return regex.test(texto);
+        }
+
+        // Comprueba si la edad que introducimos es un valor entre 6 y 80.
+        const esEdad = (number) => {
+            /* texto = parsInt(texto); */
+            if ( number >= 6 && number <= 80) {
+                ageRange.hidden = true;
+                ageRange.textContent = '';
+                ageValido = true;
+            } else {
+                ageRange.hidden = false; 
+                ageRange.textContent = 'La edad tiene que ser entre 6 y 80 años.';
+                ageValido = false;
             }
             validarEnviar();
         }
