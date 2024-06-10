@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <title>Ejercicio 15</title>
+
+    <style type="text/css">
+        .form-signin {
+            width: 100%;
+            max-width: 330px;
+            padding: 15px;
+            margin: auto;
+        }
+
+        .form-signin .checkbox {
+            font-weight: 400;
+        }
+
+        .form-signin .form-control {
+            position: relative;
+            box-sizing: border-box;
+            height: auto;
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        .form-signin .form-control:focus {
+            z-index: 2;
+        }
+
+        .form-signin input[type='email'] {
+            margin-bottom: -1px;
+            border-bottom-right-radius: 0;
+            border-bottom-left-radius: 0;
+        }
+
+        .form-signin input[type='password'] {
+            margin-bottom: 10px;
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="text-center">
+            <h1 class="h3 mb-3 font-weight-normal">Mi Formulario</h1>
+            <form class="form-signin needs-validation" novalidate>
+                <div class="form-group">
+                    <label for="name" class="sr-only my-2">Nombre</label>
+                    <input type="text" class="form-control" placeholder="Inroduzca su nombre" name="name" id="name" required>
+                    <div class="valid-feedback">
+                        ¡Correcto!
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="age" class="sr-only my-2">Edad</label>
+                    <input type="number" min="6" max="80" class="form-control" placeholder="Introduzca su edad" name="age" id="age" required>
+                    <div class="valid-feedback">
+                        ¡Correcto!
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="DNI" class="sr-only my-2">DNI</label>
+                    <input type="text" class="form-control" placeholder="Introduzca su DNI" name="dni" id="DNI"
+                    pattern="[0-9]{8}[A-Za-z]{1}" title="Debe poner 8 números y una letra" minlength="9" maxlength="9" required>
+                    <div class="valid-feedback">
+                        ¡Correcto!
+                    </div>
+                </div>
+                <div class="form-group mt-4">
+                    <button class="btn btn-lg btn-primary btn-block" id="btnLogin" type="submit" value="enviar">
+                        Submit
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        (() => {
+  'use strict'
+
+  const forms = document.querySelectorAll('.needs-validation')
+
+  // Loop over them and prevent submission
+  Array.from(forms).forEach(form => {
+    form.addEventListener('submit', event => {
+      if (!form.checkValidity()) {
+        event.preventDefault()
+        event.stopPropagation()
+      }
+
+      form.classList.add('was-validated')
+    }, false)
+  })
+})()
+
+const formulario = document.querySelector('.form-signin');
+
+        const login = (e) => {
+            // preventDefault anula la acción predeterminada del formulario
+            // En JavaScript moderno se anula este automatismo para poder manipular los formularios
+            // Normalmente, cuando tenemos un formulario será para enviar los datos a algún servidor
+            // e.preventDefault nos permite hacer un envío de datos personalizado, algo que veremos más adelante
+            e.preventDefault();
+            // Creamos una alerta
+            const alertaExito = document.createElement('small');
+            alertaExito.classList.add('form-text', 'text-success');
+            alertaExito.textContent = 'Datos enviados';
+            // Y la agregamos en la parte de abajo
+            formulario.appendChild(alertaExito);
+        }
+
+        // Asignamos eventos
+        formulario.addEventListener('submit', login);
+    </script>
+
+</body>
+
+</html>
