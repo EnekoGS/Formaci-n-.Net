@@ -8,14 +8,17 @@
 
 <body>
     <h1>API Fetch</h1>
-    <button type="button" id="cargarAPI">
+    <button type="button" id="btnCargarAPI">
         Cargar API
     </button>
     <div id="contenido"></div>
     <script>
+        const btnCargarAPI=document.querySelector('#btnCargarAPI');
+
         const obtenerDatosAPI = () => {
             fetch('https://picsum.photos/list')
                 .then(respuesta => {
+                    console.log(respuesta)
                     return respuesta.json()
                 })
                 .then(resultado => {
@@ -26,6 +29,35 @@
                     console.log(error);
                 });
         }
+
+        // const mostrarHTMLAPI = (datos) => {
+        //     const contenido = document.querySelector('#contenido');
+        //     let html = '';
+        //     const tabla = document.createElement('table');
+        //     const filaTitulo = document.createElement('tr');
+        //     const tituloAutor = document.createElement('th');
+        //     const tituloUrl = document.createElement('th');
+        //     tituloAutor.textContent="Autor";
+        //     tituloUrl.textContent="Url foto";
+        //     filaTitulo.appendChild(tituloAutor);
+        //     filaTitulo.appendChild(tituloUrl);
+        //     tabla.appendChild(filaTitulo);
+        //     datos.forEach(foto => {
+        //         const filaFoto = document.createElement('tr');
+        //         const autor = document.createElement('td');
+        //         const urlFoto = document.createElement('td');
+        //         autor.textContent=foto.author;
+        //         filaFoto.appendChild(autor);
+        //         const enlaceFoto = document.createElement('a');
+        //         enlaceFoto.href=foto.post_url;
+        //         enlaceFoto.textContent =foto.filename;
+        //         urlFoto.appendChild(enlaceFoto)
+
+        //         filaFoto.appendChild(urlFoto);
+        //         tabla.appendChild(filaFoto);
+        //     });
+        //     contenido.appendChild(tabla);
+        // }
 
         const mostrarHTMLAPI = (datos) => {
             const contenido = document.querySelector('#contenido');
@@ -39,10 +71,14 @@
             });
             contenido.innerHTML = html;
         }
+      
+        btnCargarAPI.addEventListener('click', obtenerDatosAPI);
+    </script>
+</body>
 
-        const btncargarAPI = document.querySelector('#cargarAPI');
-
-        btncargarAPI.addEventListener('click', obtenerDatosAPI);
+</html>
+      
+        btnCargarAPI.addEventListener('click', obtenerDatosAPI);
     </script>
 </body>
 
