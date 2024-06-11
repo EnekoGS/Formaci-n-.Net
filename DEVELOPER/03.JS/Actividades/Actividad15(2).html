@@ -120,10 +120,14 @@
             if (vacio || !ageOK) {
                 ageHelp.hidden = false; // Mensaje de error
                 ageHelp.textContent = 'Por favor, introduzca su edad.';
+                ageRange.hidden = false; // Mensaje de error
+                ageRange.textContent = 'Por favor, introduzca su edad.';
                 ageValido = false;
             } else {
                 ageHelp.hidden = true;
                 ageHelp.textContent = '';
+                ageRange.hidden = true;
+                ageRange.textContent = '';
                 ageValido = true;
             }
             validarEnviar();
@@ -156,17 +160,13 @@
 
         // Comprueba si la edad que introducimos es un valor entre 6 y 80.
         const esEdad = (number) => {
+        
             /* texto = parsInt(texto); */
             if ( number >= 6 && number <= 80) {
-                ageRange.hidden = true;
-                ageRange.textContent = '';
-                ageValido = true;
+                return true;
             } else {
-                ageRange.hidden = false; 
-                ageRange.textContent = 'La edad tiene que ser entre 6 y 80 años.';
-                ageValido = false;
+                return false;
             }
-            validarEnviar();
         }
 
         const esDni = (texto) => {
