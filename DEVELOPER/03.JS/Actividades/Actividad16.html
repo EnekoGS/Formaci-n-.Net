@@ -9,7 +9,7 @@
 <body>
     <!-- Tenemos primero una simple estructura de HTML -->
     <h1>Actividad 16</h1>
-    <!-- Botón par acargar la API -->
+    <!-- Botón para cargar la API -->
     <button type="button" id="cargarAPI">
         Cargar API
     </button>
@@ -27,7 +27,7 @@
                 // Luego recibimos un resultado de la respuesta de json.
                 const resultado = await respuesta.json();
                 console.log(resultado.drinks);
-                // Mostramos este resultado desde la consola
+                // Mostramos este resultado desde la consola.
                 mostrarHTMLAPI(resultado.drinks);
             }
             catch (error) {
