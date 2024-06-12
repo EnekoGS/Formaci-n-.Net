@@ -1,0 +1,20 @@
+https://www.dafont.com/es/
+https://unsplash.com/es
+https://www.iconfinder.com/
+https://www.flaticon.es/
+https://getbootstrap.com/docs/5.3/getting-started/introduction/
+https://animate.style/
+https://www.netlify.com/
+https://www.w3schools.com/tags/att_input_pattern.asp
+https://www.thecocktaildb.com/api.php
+https://restcountries.com/v3.1/region/europe
+https://www.themealdb.com/api.php
+
+Búsqueda por área
+www.themealdb.com/api/json/v1/1/filter.php?a=Canadian
+
+Lista de áreas
+www.themealdb.com/api/json/v1/1/list.php?a=list
+
+https://api.chucknorris.io/
+chrome://apps/
