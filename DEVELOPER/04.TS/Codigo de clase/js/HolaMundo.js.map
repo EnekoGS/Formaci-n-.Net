@@ -1,1 +1,1 @@
-{"version":3,"file":"HolaMundo.js","sourceRoot":"","sources":["../Codigo de clase/HolaMundo.ts"],"names":[],"mappings":";AAcA,MAAM,gBAAgB,GAAW,uBAAuB,CAAC;AAEzD,IAAI,eAAe,GAAG,uBAAuB,CAAC;AAC9C,OAAO,CAAC,GAAG,CAAC,eAAe,CAAC,CAAC"}
+{"version":3,"file":"HolaMundo.js","sourceRoot":"","sources":["../HolaMundo.ts"],"names":[],"mappings":";AAeA,MAAM,gBAAgB,GAAW,uBAAuB,CAAC;AAEzD,IAAI,eAAe,GAAG,uBAAuB,CAAC;AAC9C,OAAO,CAAC,GAAG,CAAC,eAAe,CAAC,CAAC"}
