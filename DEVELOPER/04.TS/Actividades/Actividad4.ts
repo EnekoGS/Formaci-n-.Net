@@ -1,8 +1,8 @@
 class cuentaCorriente {
     // Propiedades:
-    private titular: string;
-    private saldo: number;
-    private interes: number; // Este es un porcentaje
+    protected titular: string;
+    protected saldo: number;
+    protected interes: number; // Este es un porcentaje
 
     // Constructor:
     constructor(titular: string, saldo: number, interes: number){
@@ -44,7 +44,42 @@ class cuentaCorriente {
         return this.saldo * this.interes / 100;
     }
 }
+
+// "cuentaNomina" que extiende de "cuentaCorriente"
+class cuentaNomina extends cuentaCorriente {
+    private interesAdicional: number = 0;
+
+    // Constructor
+    constructor(titular: string, saldo: number, interes: number, interesAdicional: number) {
+        super(titular, saldo, interes); // super llama al constructor de la clase superior
+        this.interesAdicional = interesAdicional;
+    }
+
+    // SET
+    public setInteresAdicional(interesAdicional: number): void {
+        this.interesAdicional = interesAdicional;
+    }
+    // GET
+    public getInteresAdicional(): number {
+        return this.interesAdicional;
+    }
+
+    // getInteresMensualNomina: saldo *(interesAdicional+interes) /100 /12
+    public getInteresMensualNomina(): number {
+        return this.saldo * (this.interesAdicional + this.interes) / 100 / 12;
+    }
+    // getInteresAnualNomina: saldo *(interesAdicional+ interés) / 10
+    public getInteresAnualNomina(): number {
+        return this.saldo * (this.interesAdicional + this.interes) / 10;
+    }
+}
+//-------------------------------------------------------------
 let intereses = new cuentaCorriente('cuenta corriente de Andrés', 600, 25);
 intereses.setSaldo(700);
 console.log('Interés mensual:', intereses.getInteresMensual());
 console.log('Interés anual:', intereses.getInteresAnual());
+//-------------------------------------------------------------
+let nominas = new cuentaNomina('cuenta nómina de Juanito', 500, 20, 5);
+console.log('Nómina mensual: ', nominas.getInteresMensualNomina());
+console.log('Nómina anual: ', nominas.getInteresAnualNomina());
+
