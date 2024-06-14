@@ -1,23 +1,37 @@
 "use strict";
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
-const obtenerDatosApi = () => __awaiter(void 0, void 0, void 0, function* () {
-    try {
-        const respuesta = yield fetch('https://picsum.photos/v2/list');
-        const resultado = yield respuesta.json();
-        console.log(resultado);
-        console.log(resultado.author);
+class cuentaCorriente {
+    constructor(titular, saldo, interes) {
+        this.titular = titular;
+        this.saldo = saldo;
+        this.interes = interes;
     }
-    catch (error) {
-        console.log(error);
+    setTitular(titular) {
+        this.titular = titular;
     }
-});
-obtenerDatosApi();
+    setSaldo(saldo) {
+        this.saldo = saldo;
+    }
+    setInteres(interes) {
+        this.interes = interes;
+    }
+    getTitular() {
+        return this.titular;
+    }
+    getSaldo() {
+        return this.saldo;
+    }
+    getInteres() {
+        return this.saldo;
+    }
+    getInteresMensual() {
+        return this.saldo * (this.interes / 100) / 12;
+    }
+    getInteresAnual() {
+        return this.saldo * this.interes / 100;
+    }
+}
+let intereses = new cuentaCorriente('cuenta corriente de Andrés', 600, 25);
+intereses.setSaldo(700);
+console.log('Interés mensual:', intereses.getInteresMensual());
+console.log('Interés anual:', intereses.getInteresAnual());
 //# sourceMappingURL=Actividad4.js.map
