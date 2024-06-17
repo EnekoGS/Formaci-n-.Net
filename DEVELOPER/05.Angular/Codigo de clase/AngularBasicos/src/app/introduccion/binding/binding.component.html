@@ -57,6 +57,13 @@ Mostrar el párrafo correspondiente según la nota
 -->
 <br><br>
 <br><br>
-<input type="number" [(ngModel)]="nota" placeholder="Introduce una nota del 0 al 10">
-<p>{{nota < 5 ? 'Suspendido' : 'Aprobado'}}</p>
-<p hidden></p>
+<input type="number" [(ngModel)]="nota" 
+placeholder="Introduce una nota del 0 al 10"/>
+
+<div [hidden]="!nota">
+    <p>{{nota && nota < 5 ? 'Penco' : 'Aprobado'}}</p>
+    <p [hidden]="nota && nota<5">Aprobado</p>
+    <p [hidden]="nota && nota>=5">Suspenso</p>
+</div> 
+
+<p [hidden]="nota">Introduce nota</p>
