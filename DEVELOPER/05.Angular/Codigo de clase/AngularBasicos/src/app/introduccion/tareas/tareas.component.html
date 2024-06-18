@@ -1,0 +1,21 @@
+<div class="container">
+    <h1>Tareas de casa</h1>
+    <hr/>
+    <div class="row">
+      <div class="col-6">
+        <h2>Nueva tarea</h2>
+        <div class="form-group">
+          <label for="tarea">Descripción de la tarea:</label>
+          <input type="text" class="form-control" id="descripcion" [(ngModel)]="descripcion" placeholder="Por favor, introduzca una tarea.">
+        </div>
+        <br>
+        <div class="form-check">
+          <input type="form-check-input" type="checkbox" value="" id="realizada" [(ngModel)]="realizada">
+          <label class="form-check-label" for="realizada">
+            ¿Está realizada la tarea?
+          </label>
+        </div>
+        <button type="button" class="btn btn-success mt-4" (click)=""></button>
+      </div>
+    </div>
+</div>

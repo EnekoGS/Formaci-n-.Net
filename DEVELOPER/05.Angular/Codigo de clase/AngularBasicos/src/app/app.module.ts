@@ -7,6 +7,7 @@ import { FormsModule } from '@angular/forms';
 import { DirectivasComponent } from './introduccion/directivas/directivas.component';
 import { ActividadNgForComponent } from './introduccion/actividad-ng-for/actividad-ng-for.component';
 import { AmigosComponent } from './introduccion/amigos/amigos.component';
+import { TareasComponent } from './introduccion/tareas/tareas.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { AmigosComponent } from './introduccion/amigos/amigos.component';
     BindingComponent,
     DirectivasComponent,
     ActividadNgForComponent,
-    AmigosComponent
+    AmigosComponent,
+    TareasComponent
   ],
   imports: [
     BrowserModule,
