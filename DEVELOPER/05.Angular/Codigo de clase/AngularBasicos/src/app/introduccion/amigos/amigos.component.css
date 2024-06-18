@@ -1,0 +1,8 @@
+.mejorAmigo td, .mejorAmigo th{
+    background-color: lightblue;
+}
+
+.avatar {
+    border-radius: 50%;
+    border: 1px solid red;
+}

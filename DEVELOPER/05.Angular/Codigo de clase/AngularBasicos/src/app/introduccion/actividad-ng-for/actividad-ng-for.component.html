@@ -1,0 +1,19 @@
+<!-- CARTAS DE PERSONAJES -->
+
+<div class="body">
+    <div class="row gx-5">
+        <div *ngFor="let persona of personas" class="col-md-3">
+            <div class="card" style="width: 18rem;">
+                <img src="{{persona.avatar}}" class="card-img-top" alt="avatar">
+                <div class="card-body">
+                  <h5 class="card-title">{{persona.nombre}}</h5>
+                  <h6 class="card-text">{{persona.apellido}}</h6>
+                  <p class="card-text">{{persona.email}}</p>
+                  <p class="card-text">{{persona.ciudad}}</p>
+                  <p class="card-text"><b>{{persona.sueldo}}</b></p>
+                </div>
+              </div>
+        </div>
+    </div>
+</div>
+
