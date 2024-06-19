@@ -1,0 +1,68 @@
+<div class="container">
+    <h1>Agregar cliente</h1>
+    <form #formulario="ngForm">
+        <!-- NOMBRE -->
+      <div class="form-group"> 
+        <label>Nombre</label>
+        <input type="text" class="form-control" name="nombre" [(ngModel)]="cliente.nombre" required #nombre="ngModel" placeholder="Nombre"/>
+        <small class="form-text text danger" *ngIf="!nombre.valid && nombre.touched">
+            Nombre obligatorio
+        </small>
+      </div>
+        <!-- CATEGORÍAS -->
+      <div class="form-group mt-2">
+        <label>Categoría</label>
+        <select name="role" class="form-control" [(ngModel)]="cliente.categoria">
+            <option *ngFor="let categoria of categorias" [value]="categoria.value">{{categoria.display}}</option>
+        </select>
+      </div>
+      <!-- EMAIL -->
+      <div class="form-group mt-2">
+        <label>Correo electrónico</label>
+        <input type="email" class="form-control" name="email" [(ngModel)]="cliente.email" #email="ngModel" placeholder="Correo electrónico"/>
+        <small class="form-text text danger" *ngIf="!email.valid && email.touched">
+            Correo Electrónico obligatorio
+        </small>
+      </div>
+      <!-- FACTURACIÓN -->
+      <div class="form-group mt-2">
+        <label>Facturación anual</label>
+        <input type="number" class="form-control" name="facturacionAnual" [(ngModel)]="cliente.facturacionAnual" min="200" required #facturacionAnual="ngModel" />
+        <div *ngIf="!facturacionAnual.valid && facturacionAnual.touched">
+          <span class="form-text text-danger" *ngIf="facturacionAnual.hasError('required')">
+            Precio obligatorio
+          </span>
+          <span class="form-text text-danger" *ngIf="facturacionAnual.hasError('min')">
+            Precio mínimo de 200 €
+          </span>
+        </div>
+      </div>
+      <!-- LOCALIDAD -->
+      <div class="form-group mt-2">
+        <label>Localidad</label>
+        <div class="form-group mt-2">
+          <input type="text" class="form-control" name="localidad" [(ngModel)]="cliente.localidad" required #localidad="ngModel" placeholder="Localidad es obligatoria" />
+          <span class="form-text text-danger" *ngIf="!localidad.valid && localidad.touched"></span>
+        </div>
+      </div>
+      <!-- ¿MOROSO? 🤨​ -->
+      <div class="form-group mt-2">
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" name="moroso" [(ngModel)]="cliente.moroso" #moroso="ngModel"/>
+            ¿¿¿¿Eres moroso???? 🤨​
+          </label>
+        </div>
+      </div>
+      
+      <button type="submit" (click)="guardar()" class="btn btn-primary" [disabled]="formulario.invalid || moroso.value === true">
+        Aceptar
+      </button>
+    </form>
+  
+    <!-- <div class="my-2" style="border-radius: 5px; padding: 10px; border: 1px solid; background-color: lightgray">
+      <div>Detalles del formulario:</div>
+      <pre>¿Es válido?: <br>{{formulario.valid }}</pre>
+      <pre>¿Se ha aceptado?: <br>{{formulario.submitted }}</pre>
+    </div> -->
+  </div>

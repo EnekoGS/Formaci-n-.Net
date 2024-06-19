@@ -8,6 +8,10 @@ import { DirectivasComponent } from './introduccion/directivas/directivas.compon
 import { ActividadNgForComponent } from './introduccion/actividad-ng-for/actividad-ng-for.component';
 import { AmigosComponent } from './introduccion/amigos/amigos.component';
 import { TareasComponent } from './introduccion/tareas/tareas.component';
+import { FormularioUsuariosComponent } from './formularios/formulario-usuarios/formulario-usuarios.component';
+import { FormularioClientesComponent } from './formularios/formulario-clientes/formulario-clientes.component';
+import { FormularioUsuariosMejoradoComponent } from './formularios/formulario-usuarios-mejorado/formulario-usuarios-mejorado.component';
+import { FormularioClientesMejoradoComponent } from './formularios/formulario-clientes-mejorado/formulario-clientes-mejorado.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +20,11 @@ import { TareasComponent } from './introduccion/tareas/tareas.component';
     DirectivasComponent,
     ActividadNgForComponent,
     AmigosComponent,
-    TareasComponent
+    TareasComponent,
+    FormularioUsuariosComponent,
+    FormularioClientesComponent,
+    FormularioUsuariosMejoradoComponent,
+    FormularioClientesMejoradoComponent
   ],
   imports: [
     BrowserModule,
