@@ -2,7 +2,7 @@
     <h1>Tareas de casa</h1>
     <hr/>
     <div class="row">
-      <div class="col-6">
+      <div class="col-4">
         <h2>Nueva tarea</h2>
         <div class="form-group">
           <label for="tarea">Descripción de la tarea:</label>
@@ -15,21 +15,20 @@
             ¿Está realizada la tarea?
           </label>
         </div>
-        <button type="button" class="btn btn-success mt-4" (click)=""></button>
+        <button type="button" class="btn btn-success mt-4" (click)="agregarTarea()">Agregar Tarea</button>
       </div>
       <div class="col">
         <table class="table">
           <thead>
             <tr>
               <th scope="col">Descripción de la tarea:</th>
-              <th scope="col">¿Está realizada la tarea?</th>
             </tr>
           </thead>
           <body>
             <tr *ngFor="let tarea of misTareas; let i=index" [class.tareaImportante]="tarea.tareasImportantes">
               <th scope="row">{{tarea.descripcion}}</th>
-              <td>{{tarea.realizada ? 'Sí':'No'}}</td>
-              <td>{{tarea.tareasImportantes}} ? 'Sí':'No'</td>
+              <td><b>¿Está realizada?</b> {{tarea.realizada ? 'Sí':'No'}}</td>
+              <td><b>¿Es importante?</b> {{tarea.tareasImportantes ? 'Sí':'No'}}</td>
               <td><button type="button" class="btn btn-danger" (click)="eliminarTarea(i)">Eliminar tarea</button></td>
               <td><button type="button" class="btn btn-warning" (click)="priorizarTarea(i)">Priorizar la tarea</button></td>
             </tr>
