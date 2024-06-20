@@ -19,7 +19,7 @@
       <!-- EMAIL -->
       <div class="form-group mt-2">
         <label>Correo electrónico</label>
-        <input type="email" class="form-control" name="email" [(ngModel)]="cliente.email" #email="ngModel" placeholder="Correo electrónico"/>
+        <input type="email" class="form-control" name="email" [(ngModel)]="cliente.email" required #email="ngModel" placeholder="Correo electrónico" />
         <small class="form-text text danger" *ngIf="!email.valid && email.touched">
             Correo Electrónico obligatorio
         </small>

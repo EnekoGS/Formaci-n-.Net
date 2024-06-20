@@ -8,8 +8,8 @@ import { ICliente } from 'src/app/interfaces/cliente.interface';
   styleUrls: ['./formulario-clientes-mejorado.component.css']
 })
 export class FormularioClientesMejoradoComponent implements OnInit {
-  // ViewChild nos va a permitir seleccionar del DOM aquello que tiene #formulario. miFormulario es un alias
 
+  // ViewChild nos va a permitir seleccionar del DOM aquello que tiene #formulario. miFormulario es un alias
   @ViewChild('formulario') formularioClientes!: NgForm;
   // La categoria del producto será una lista desplegable con los valores: hogar, alimientación y tecnología
 

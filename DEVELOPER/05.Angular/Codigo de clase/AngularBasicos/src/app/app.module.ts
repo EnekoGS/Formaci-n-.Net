@@ -1,5 +1,15 @@
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+// Cambiar el locale de la app. Cambiamos el idioma de la aplicación a nivel global
+// Importar los idiomas deseados (por lo general será solo el castellano (es))
+import localeEs from '@angular/common/locales/es';
+import localeFr from '@angular/common/locales/fr';
+// Ahora los registramos
+import { registerLocaleData } from '@angular/common';
+
+// Registrar los idiomas importados arriba
+registerLocaleData(localeEs);
+registerLocaleData(localeFr);
 
 import { AppComponent } from './app.component';
 import { BindingComponent } from './introduccion/binding/binding.component';
@@ -12,6 +22,12 @@ import { FormularioUsuariosComponent } from './formularios/formulario-usuarios/f
 import { FormularioClientesComponent } from './formularios/formulario-clientes/formulario-clientes.component';
 import { FormularioUsuariosMejoradoComponent } from './formularios/formulario-usuarios-mejorado/formulario-usuarios-mejorado.component';
 import { FormularioClientesMejoradoComponent } from './formularios/formulario-clientes-mejorado/formulario-clientes-mejorado.component';
+import { AngularPipesComponent } from './pipes/angular-pipes/angular-pipes.component';
+import { PipesPersonalizadosComponent } from './pipes/pipes-personalizados/pipes-personalizados.component';
+import { AlmacenamientoArchivosPipe } from './pipes/almacenamiento-archivos.pipe';
+import { AlmacenamientoArchivosMultiplePipe } from './pipes/almacenamiento-archivos-multiple.pipe';
+import { DistanciasPipe } from './pipes/distancias.pipe';
+import { ComisionesPipe } from './pipes/comisiones.pipe';
 
 @NgModule({
   declarations: [
@@ -24,13 +40,21 @@ import { FormularioClientesMejoradoComponent } from './formularios/formulario-cl
     FormularioUsuariosComponent,
     FormularioClientesComponent,
     FormularioUsuariosMejoradoComponent,
-    FormularioClientesMejoradoComponent
+    FormularioClientesMejoradoComponent,
+    AngularPipesComponent,
+    PipesPersonalizadosComponent,
+    AlmacenamientoArchivosPipe,
+    AlmacenamientoArchivosMultiplePipe,
+    DistanciasPipe,
+    ComisionesPipe
   ],
   imports: [
     BrowserModule,
     FormsModule
   ],
-  providers: [],
+  // Configuramos el idioma por defecto de la app
+  providers: [{ provide: LOCALE_ID, useValue: 'es' }],
   bootstrap: [AppComponent]
+
 })
 export class AppModule { }
