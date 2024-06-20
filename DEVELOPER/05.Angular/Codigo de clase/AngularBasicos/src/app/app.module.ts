@@ -28,6 +28,9 @@ import { AlmacenamientoArchivosPipe } from './pipes/almacenamiento-archivos.pipe
 import { AlmacenamientoArchivosMultiplePipe } from './pipes/almacenamiento-archivos-multiple.pipe';
 import { DistanciasPipe } from './pipes/distancias.pipe';
 import { ComisionesPipe } from './pipes/comisiones.pipe';
+import { RecetasComponent } from './rest/recetas/recetas.component';
+import { HttpClientModule } from '@angular/common/http';
+import { PaisesComponent } from './rest/paises/paises.component';
 
 @NgModule({
   declarations: [
@@ -46,11 +49,14 @@ import { ComisionesPipe } from './pipes/comisiones.pipe';
     AlmacenamientoArchivosPipe,
     AlmacenamientoArchivosMultiplePipe,
     DistanciasPipe,
-    ComisionesPipe
+    ComisionesPipe,
+    RecetasComponent,
+    PaisesComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   // Configuramos el idioma por defecto de la app
   providers: [{ provide: LOCALE_ID, useValue: 'es' }],
