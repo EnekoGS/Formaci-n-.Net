@@ -20,3 +20,5 @@ https://api.chucknorris.io/
 chrome://apps/
 
 https://www.themealdb.com/api/json/v1/1/filter.php?c=pork
+
+https://api.giphy.com/v1/gifs/search?q=sports&limit=10&api_key=INs43pweYnAqgPDYPPUKjFBP6aat1ok2

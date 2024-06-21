@@ -31,6 +31,11 @@ import { ComisionesPipe } from './pipes/comisiones.pipe';
 import { RecetasComponent } from './rest/recetas/recetas.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PaisesComponent } from './rest/paises/paises.component';
+import { HomeComponent } from './home/home.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { AppRoutingModule } from './app-routing/app-routing.module';
+import { NavbarComponent } from './navbar/navbar.component';
+import { GiphyComponent } from './rest/giphy/giphy.component';
 
 @NgModule({
   declarations: [
@@ -51,12 +56,17 @@ import { PaisesComponent } from './rest/paises/paises.component';
     DistanciasPipe,
     ComisionesPipe,
     RecetasComponent,
-    PaisesComponent
+    PaisesComponent,
+    HomeComponent,
+    NotFoundComponent,
+    NavbarComponent,
+    GiphyComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    AppRoutingModule
   ],
   // Configuramos el idioma por defecto de la app
   providers: [{ provide: LOCALE_ID, useValue: 'es' }],

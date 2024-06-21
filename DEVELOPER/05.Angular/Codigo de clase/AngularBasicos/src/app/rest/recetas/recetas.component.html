@@ -1,22 +1,22 @@
 <form #formulario="ngForm" (submit)="getRecetas()">
     <div class="form-group">
-      <div class="form-group">
+      <!-- <div class="form-group">
         <label for="categoria">Categoría</label>
         <input type="text" class="form-control" id="categoria" name="categoria" [(ngModel)]="categoriaSeleccionada"
           required #categoria="ngModel" />
         <div *ngIf="categoria.invalid && categoria.touched" class="text-danger">
           La categoría es obligatoria
         </div>
-      </div>
+      </div> -->
       <label for="comidas">Recetas:</label>
-      <!-- <select id="categoria" name="categoria" class="form-select" [(ngModel)]="categoriaSeleccionada" required
+      <select id="categoria" name="categoria" class="form-select" [(ngModel)]="categoriaSeleccionada" required
         #comidas="ngModel">
         <option *ngFor="let categoria of categorias.meals" [value]="categoria.strCategory">{{categoria.strCategory}}
         </option>
       </select>
       <div *ngIf="comidas.invalid && comidas.touched" class="text-danger">
         La categoría es obligatoria
-      </div> -->
+      </div>
     </div>
     <button type="submit" class="btn btn-primary" [disabled]="formulario.invalid">
       Aceptar

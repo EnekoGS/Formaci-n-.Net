@@ -1,8 +1,8 @@
 <form #formulario="ngForm" (submit)="getPaises()">
     <div class="form-group">
     <div class="form-group">
-      <label for="contienente">Continente:</label>
-      <input type="text" class="form-control" id="contienente" name="contienente" [(ngModel)]="continenteSeleccionado" required #continente="ngModel"/>
+      <label for="continente">Continente:</label>
+      <input type="text" class="form-control" id="continente" name="continente" [(ngModel)]="continenteSeleccionado" required #continente="ngModel"/>
     <small *ngIf="continente.invalid && continente.touched" class="text-danger">
         Por favor, introduzca el nombre de un continente.
     </small>
