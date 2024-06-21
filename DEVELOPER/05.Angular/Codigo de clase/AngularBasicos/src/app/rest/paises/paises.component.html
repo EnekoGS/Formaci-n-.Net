@@ -1,4 +1,4 @@
-<form #formulario="ngForm" (submit)="getPaises">
+<form #formulario="ngForm" (submit)="getPaises()">
     <div class="form-group">
     <div class="form-group">
       <label for="contienente">Continente:</label>
@@ -18,13 +18,18 @@
 <div class="row">
     <div class="col" *ngFor="let pais of paises">
      <div class="card" style="width: 18rem;">
-     <img src="..." class="card-img-top" alt="...">
+     <img class="card-img-top" [src]="pais.flags.png" [alt]="pais.name.common">
      <div class="card-body">
-       <h5 class="card-title">Card title</h5>
-       <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+       <h5 class="card-title">{{pais.name.common}}</h5>
+       <p class="card-text">Capital: {{pais.capital}}</p>
+       <p class="card-text">Población: {{pais.population | number: '1.0'}} personas</p>
+       <p *ngFor="let l of pais.languages | keyvalue">
+        {{l.key}}:{{l.value}}
+      </p>
       </div>
      </div>  
     </div>
-    
 </div>
-  
+<div class="alert alert-danger" role="alert" *ngIf="mostrarError">
+    No se ha podido acceder 
+  </div>
