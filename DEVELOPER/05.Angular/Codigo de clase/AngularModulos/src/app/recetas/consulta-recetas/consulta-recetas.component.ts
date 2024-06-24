@@ -17,9 +17,15 @@ export class ConsultaRecetasComponent implements OnInit {
     meals: []
   };
 
+  cols: any[] = [];
+
   constructor(private recetasService: RecetasService) {}
 
   ngOnInit(): void {
+    this.cols = [
+      { field: 'strMeal', header: 'Título' },
+      { field: 'strMealThumb', header: 'Foto' }
+    ];
     this.recetasService.getCategorias().subscribe({
       next: (data: ICategoriasMeal) => {
         console.log(data);
