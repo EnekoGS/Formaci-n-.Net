@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RecetasService } from '../recetas.service';
 import { ICategoriasMeal, IMeals } from '../meal.interface';
+import { Table } from 'primeng/table';
 
 @Component({
   selector: 'app-consulta-recetas',
@@ -26,6 +27,7 @@ export class ConsultaRecetasComponent implements OnInit {
       { field: 'strMeal', header: 'Título' },
       { field: 'strMealThumb', header: 'Foto' }
     ];
+    
     this.recetasService.getCategorias().subscribe({
       next: (data: ICategoriasMeal) => {
         console.log(data);
@@ -48,5 +50,9 @@ export class ConsultaRecetasComponent implements OnInit {
       error: (err) => (this.mostrarError = true),
       complete: () => console.log('ok')
     });
+  }
+
+  clear(table: Table) {
+    table.clear();
   }
 }
