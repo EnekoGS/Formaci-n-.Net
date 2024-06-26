@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { IPaises } from './paises.interface';
 import { PaisesService } from './paises.service';
-import { TableModule } from 'primeng/table';
+
 
 @Component({
   selector: 'app-paises',
@@ -14,7 +14,16 @@ export class PaisesComponent {
 
   mostrarError = false;
 
-  constructor(private paisesService: PaisesService) {}
+  cols: any[] = [];
+  
+  constructor(private paisesService: PaisesService) {
+    this.cols = [
+      { field: 'name.common', header:'Pais' },
+      { field: 'capital', header:'Capital' },
+      { field: 'flags.png', header:'Bandera' },
+      { field: 'pais.maps.googlemaps', header:'Mapa' }
+    ];
+  }
 
   getMoneda() {
     this.paisesService.getMoneda(this.monedaSeleccionada).subscribe({

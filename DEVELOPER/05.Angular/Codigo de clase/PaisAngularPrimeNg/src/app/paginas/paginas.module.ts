@@ -5,7 +5,7 @@ import { PaisesComponent } from './paises/paises.component';
 import { Error404Component } from './error404/error404.component';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
-
+import { TableModule } from 'primeng/table';
 
 
 @NgModule({
@@ -17,7 +17,8 @@ import { FormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     RouterModule,
-    FormsModule
+    FormsModule,
+    TableModule
   ],
   exports: [
     HomeComponent,
