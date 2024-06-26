@@ -4,6 +4,7 @@ import { HomeComponent } from './home/home.component';
 import { PaisesComponent } from './paises/paises.component';
 import { Error404Component } from './error404/error404.component';
 import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -15,7 +16,8 @@ import { RouterModule } from '@angular/router';
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    FormsModule
   ],
   exports: [
     HomeComponent,
