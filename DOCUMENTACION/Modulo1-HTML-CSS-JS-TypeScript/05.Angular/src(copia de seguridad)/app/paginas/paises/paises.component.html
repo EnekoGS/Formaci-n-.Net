@@ -1,0 +1,16 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-6">
+            <form #formulario="ngForm" (submit)="getMoneda()">
+                <div class="form-group">
+                    <label for="moneda">Moneda:</label>
+                    <input type="text" class="form-control" name="nombre" [(ngModel)] required #moneda/>
+                    <small *ngIf="moneda.invalid && moneda.touched" class="text-danger">
+                        El tipo de moneda es obligatorio
+                    </small>
+                </div>
+            </form>
+        </div>
+        <div class="col-6"></div>
+    </div>
+</div>
