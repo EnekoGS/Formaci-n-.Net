@@ -4,6 +4,8 @@ import { PaisesMundoComponent } from './paises-mundo/paises-mundo.component';
 import { PaisDetallesComponent } from './pais-detalles/pais-detalles.component';
 import { PaisesComponent } from './paises.component';
 import { PaisesRoutingModule } from './paises-routing.module';
+import { TablaPaisesComponent } from './tabla-paises/tabla-paises.component';
+import { CardPaisComponent } from './card-pais/card-pais.component';
 
 
 
@@ -11,7 +13,9 @@ import { PaisesRoutingModule } from './paises-routing.module';
   declarations: [
     PaisesMundoComponent,
     PaisDetallesComponent,
-    PaisesComponent
+    PaisesComponent,
+    TablaPaisesComponent,
+    CardPaisComponent
   ],
   imports: [
     CommonModule,
