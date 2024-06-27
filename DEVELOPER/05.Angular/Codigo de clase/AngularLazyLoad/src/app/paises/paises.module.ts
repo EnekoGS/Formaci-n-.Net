@@ -6,6 +6,7 @@ import { PaisesComponent } from './paises.component';
 import { PaisesRoutingModule } from './paises-routing.module';
 import { TablaPaisesComponent } from './tabla-paises/tabla-paises.component';
 import { CardPaisComponent } from './card-pais/card-pais.component';
+import { PaisesService } from './paises.service';
 
 
 
@@ -20,6 +21,7 @@ import { CardPaisComponent } from './card-pais/card-pais.component';
   imports: [
     CommonModule,
     PaisesRoutingModule
-  ]
+  ],
+  providers: [PaisesService]
 })
 export class PaisesModule { }

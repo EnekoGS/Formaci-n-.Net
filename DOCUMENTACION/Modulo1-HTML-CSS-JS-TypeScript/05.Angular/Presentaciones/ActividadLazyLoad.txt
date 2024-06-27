@@ -2,7 +2,7 @@ Crear un proyecto nuevo en Angular con el nombre PaísesAnguarLazyLoad
 Crear un módulo con el nombre paginas. Dentro de este módulo crear los siguientes componentes:
 o home
 o error404
---------------------------------------------------
+-------------------------------------------------------------------------------------------------------
 Crear un módulo shared con un componente con el nombre navbar 
 El navbar tendrá dos links de navegación, el principal irá a la página home y el otro irá a la página países.
 -------------------------------------------------------------------------------------------------------
@@ -13,15 +13,20 @@ o Incluir un título con el texto Recurso no encontrado
 -------------------------------------------------------------------------------------------------------
 Crear el módulo paises con los componentes:
 paises (contenedor)
-consultaPailses 
+consultaPaises 
 -------------------------------------------------------------------------------------------------------
 Desarrollar el sistema de rutas general para cargar en diferido el módulo paises
 -------------------------------------------------------------------------------------------------------
 Codificar el componente paises (contenedor) para mostrar el hijo consultaPaises
 -------------------------------------------------------------------------------------------------------
 Desarrollar el sistema de rutas para el módulo paises
------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
 Desarrollar el navbar y el app.component.html para acceder a paises y a home
+
+ng g m paises
+ng g c paises/consultaPaises --skip-tests
+ng g c paises/paises --style=none --flat --skip-tests
+ng g s paises/paises --skip-tests
 
 
 

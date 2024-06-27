@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { IPais } from '../pais.interface';
 
 @Component({
   selector: 'app-tabla-paises',
@@ -6,5 +7,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./tabla-paises.component.css']
 })
 export class TablaPaisesComponent {
+  @Input() paises: IPais[] = [];
+  @Output() elegidoPais = new EventEmitter<IPais>();
 
+  constructor() {}
+
+  verDetalles(pais: IPais) {
+    this.elegidoPais.emit(pais);
+  }
 }

@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { IPais } from '../pais.interface';
 
 @Component({
   selector: 'app-card-pais',
@@ -6,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./card-pais.component.css']
 })
 export class CardPaisComponent {
-
+  @Input() pais!: IPais;
 }
