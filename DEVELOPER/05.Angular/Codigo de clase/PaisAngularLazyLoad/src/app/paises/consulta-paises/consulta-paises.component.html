@@ -1,4 +1,4 @@
-<!-- <div class="row">
+<div class="row">
     <div class="col-md-4 sm-12">
         <h2>Moneda:</h2>
         <form #formulario="ngForm" (submit)="getMoneda()">
@@ -14,36 +14,6 @@
             </div>
         </form>
     </div>
-    <div class="col-md-8 sm-12">
-    <div class="col-md-4">
-        <table *ngIf="monedaPais.length>0">
-            <thead>
-                <tr>
-                    <th scope="col">País</th>
-                    <th scope="col">Capital</th>
-                    <th scope="col">Bandera</th>
-                    <th scope="col">Mapa</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor="let pais of monedaPais">
-                    <td><div style="width: 10rem">{{pais.name.common}}</div></td>
-                    <td><div style="width: 10rem">{{pais.capital}}</div></td>
-                    <td>
-                    <div class="image" style="width: 10rem">
-                        <img class="card-img-top" [src]="pais.flags.png" [alt]="pais.name">
-                    </div>
-                    </td>
-                    <td>
-                      <div class="image" style="margin-left: 1rem">
-                        <a class="btn btn-primary" href="{{pais.maps.googleMaps}}" target="_blank" role="button">Map</a>
-                      </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-    </div>
 </div>
- -->
+ 
  <p>Hola, esto es Pais</p>
