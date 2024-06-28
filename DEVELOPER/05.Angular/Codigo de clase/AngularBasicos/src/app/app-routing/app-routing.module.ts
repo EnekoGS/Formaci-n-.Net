@@ -11,6 +11,7 @@ import { GiphyComponent } from '../rest/giphy/giphy.component';
 
 import { HomeComponent } from '../home/home.component';
 import { NotFoundComponent } from '../not-found/not-found.component';
+import { FormularioReactivoComponent } from '../formularios/formulario-reactivo/formulario-reactivo.component';
 
   
 const appRoutes: Routes = [
@@ -18,6 +19,7 @@ const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'binding', component: BindingComponent},
   { path: 'directivas', component: DirectivasComponent},
+  { path: 'formulario-reactivo', component: FormularioReactivoComponent},
   { path: 'pipes-angular', component: AngularPipesComponent},
   { path: 'pipes-personalizados', component: PipesPersonalizadosComponent},
   { path: 'paises', component: PaisesComponent },

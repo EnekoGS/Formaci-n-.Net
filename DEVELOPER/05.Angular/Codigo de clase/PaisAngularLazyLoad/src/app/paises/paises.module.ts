@@ -5,6 +5,7 @@ import { PaisesComponent } from './paises.component';
 import { PaisesRoutingModule } from './paises.routing.module';
 import { FormsModule } from '@angular/forms';
 import { TablaPaisesComponent } from './tabla-paises/tabla-paises.component';
+import { PaisService } from './pais.service';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,9 @@ import { TablaPaisesComponent } from './tabla-paises/tabla-paises.component';
     CommonModule,
     PaisesRoutingModule,
     FormsModule
+  ],
+  providers: [
+    PaisService
   ]
 })
 export class PaisesModule { }

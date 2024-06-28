@@ -13,7 +13,7 @@ registerLocaleData(localeFr);
 
 import { AppComponent } from './app.component';
 import { BindingComponent } from './introduccion/binding/binding.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DirectivasComponent } from './introduccion/directivas/directivas.component';
 import { ActividadNgForComponent } from './introduccion/actividad-ng-for/actividad-ng-for.component';
 import { AmigosComponent } from './introduccion/amigos/amigos.component';
@@ -36,6 +36,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { NavbarComponent } from './navbar/navbar.component';
 import { GiphyComponent } from './rest/giphy/giphy.component';
+import { FormularioReactivoComponent } from './formularios/formulario-reactivo/formulario-reactivo.component';
 
 @NgModule({
   declarations: [
@@ -60,11 +61,13 @@ import { GiphyComponent } from './rest/giphy/giphy.component';
     HomeComponent,
     NotFoundComponent,
     NavbarComponent,
-    GiphyComponent
+    GiphyComponent,
+    FormularioReactivoComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
     AppRoutingModule
   ],
